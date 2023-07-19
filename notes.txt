@@ -1,0 +1,39 @@
+PS /home/azureuser> $password = Read-Host "Your username is 'cloudadmin'. Please enter a password for your Azure SQL Database server that meets the password requirements"
+
+Your username is 'cloudadmin'. Please enter a password for your Azure SQL Database server that meets the password requirements: @mtRmt92780$1$
+
+PS /home/azureuser> # Prompt for local ip address
+PS /home/azureuser> $ipAddress = Read-Host "Please enter your IP address (include periods)" 20.97.50.157     
+
+Please enter your IP address (include periods) 20.97.50.157: 20.97.50.157
+
+PS /home/azureuser> # Get resource group and location and random string
+PS /home/azureuser> $resourceGroupName = "learn-6a45d08c-bea7-4b4e-9e55-6d5341776a9d"
+PS /home/azureuser> $resourceGroup = Get-AzResourceGroup | Where ResourceGroupName -like $resourceGroupName
+PS /home/azureuser> $uniqueID = Get-Random -Minimum 100000 -Maximum 1000000
+PS /home/azureuser> $location = $resourceGroup.Location
+PS /home/azureuser> # The logical server name has to be unique in the system
+PS /home/azureuser> $serverName = "bus-server$($uniqueID)"
+PS /home/azureuser> # The sample database name
+PS /home/azureuser> $databaseName = "bus-db"    
+PS /home/azureuser> Write-Host "Please note your unique ID for future exercises in this module:"  
+Please note your unique ID for future exercises in this module:
+
+PS /home/azureuser> Write-Host $uniqueID
+765965
+
+PS /home/azureuser> Write-Host "Your resource group name is:"
+Your resource group name is:
+PS /home/azureuser> Write-Host $resourceGroupName
+learn-6a45d08c-bea7-4b4e-9e55-6d5341776a9d
+PS /home/azureuser> Write-Host "Your resources were deployed in the following region:"
+Your resources were deployed in the following region:
+
+PS /home/azureuser> Write-Host $location
+westus
+PS /home/azureuser> Write-Host "Your server name is:"
+Your server name is:
+
+PS /home/azureuser> Write-Host $serverName
+bus-server765965
+PS /home/azureuser> 
