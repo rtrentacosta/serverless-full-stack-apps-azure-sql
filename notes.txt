@@ -37,3 +37,5 @@ Your server name is:
 PS /home/azureuser> Write-Host $serverName
 bus-server765965
 PS /home/azureuser> 
+
+sqlcmd -S bus-server765965.database.windows.net -P @mtRmt92780$1$ -U cloudadmin -d bus-db
