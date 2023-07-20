@@ -39,3 +39,4 @@ bus-server765965
 PS /home/azureuser> 
 
 sqlcmd -S bus-server765965.database.windows.net -P @mtRmt92780$1$ -U cloudadmin -d bus-db
+Server=bus-server765965.database.windows.net,1433;Initial Catalog=bus-db;User Id=cloudadmin;Password=@mtRmt92780$1$;Connection Timeout=30;
